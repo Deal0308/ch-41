@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Invoice</h1>
+        <p id="productName" ></p>
+        <p id="productPrice"></p>
+        <p id="productQuantity"></p>
+        <p id="subtotal"></p>
+        <p id="tax"></p>
+        <p2 id="total"></p2>
+
+<script>
+let productName = prompt("Enter the product name:");
+let productPrice = parseFloat(prompt("Enter the product price:"));
+let productQuantity = parseInt(prompt("Enter the product quantity:"));
+
+//tax rate of 10%
+let taxRate = 0.10;
+
+let subtotal = productPrice * productQuantity;
+let tax = subtotal * taxRate;
+let total = subtotal + tax;
+
+document.getElementById("productName").textContent = `Product Name: ${productName}`;
+document.getElementById("productPrice").textContent = `Product Price: $${productPrice}`;
+document.getElementById("productQuantity").textContent = `Product Quantity: ${productQuantity}`;
+document.getElementById("subtotal").textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+document.getElementById("tax").textContent = `Tax: $${tax.toFixed(2)}`;
+document.getElementById("total").textContent = `Total: $${total.toFixed(2)}`;
+</script>
+
+</body>
+</html>
